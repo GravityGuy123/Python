@@ -5,43 +5,40 @@ Welcome to my Python development repository! This collection showcases my journe
 ## Repository Structure
 
 ```
-
-
 ├── Practices/         # Python learning exercises and practice files
-│ ├── class.py
-│ ├── control.py
-│ ├── data_type.py
-│ ├── data.py
-│ ├── DataStructureAlgorithm.py
-│ ├── func.py
-│ ├── funtion.py
-│ ├── list.py
-│ ├── loop.py
-│ ├── math_method.py
-│ ├── method.py
-│ ├── number_type.py
-│ ├── part1.py
-│ ├── try_except.py
-│ └── ...
+│   ├── class.py
+│   ├── control.py
+│   ├── data_type.py
+│   ├── data.py
+│   ├── DataStructureAlgorithm.py
+│   ├── func.py
+│   ├── funtion.py
+│   ├── list.py
+│   ├── loop.py
+│   ├── math_method.py
+│   ├── method.py
+│   ├── number_type.py
+│   ├── part1.py
+│   ├── try_except.py
+│   └── ...
 │
-└── Projects/          # Complete Python projects organized by folders
-│ ├── BookLibrary
-│ ├── CelsiusToFahrenheit
-│ ├── Conditionals
-│ ├── Email&PasswordValidator
-│ ├── file_download
-│ ├── LOKControls
-│ ├── loop_iteration
-│ ├── MoviePDFGenerator
-│ ├── New
-│ ├── password_validator
-│ ├── SortAndFactorial
-│ ├── TemperatureC&F
-│ └── ...
+├── Projects/          # Complete Python projects organized by folders
+│   ├── BookLibrary
+│   ├── CelsiusToFahrenheit
+│   ├── Conditionals
+│   ├── Email&PasswordValidator
+│   ├── file_download
+│   ├── LOKControls
+│   ├── loop_iteration
+│   ├── MoviePDFGenerator
+│   ├── New
+│   ├── password_validator
+│   ├── SortAndFactorial
+│   ├── TemperatureC&F
+│   └── ...
 │
-└── README.md/          # Code Description
-│
-└── ...
+└── README.md          # Project documentation
+```
 
 ## Overview
 
