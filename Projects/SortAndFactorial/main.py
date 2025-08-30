@@ -64,18 +64,40 @@
 # int(num)
 # factorial(num)
 
+# from math import factorial as f
 
-def factorial(param: int) -> int:
-    value = param
-    result = 1
-    while value > 1:
-        result *= value
-        value -= 1
-    return result
+# print(f"Fatorial of 4 is: {f(4)}")
+# print(f"Fatorial of 1 is: {f(1_000_000)}")
 
-num = input("Enter an integer: ")
-num = int(num)
-print(factorial(num))
+
+# def factorial(num: int) -> int:
+#     if num <= 0:
+#         return 0
+#     result = 1
+
+#     for r in range(num, 1, -1):
+#         result *= r
+#     return result
+# print(factorial(5))
+
+
+# def factorial(param: int) -> int:
+#     value = param
+#     result = 1
+#     while value > 1:
+#         result *= value
+#         value -= 1
+#     return result
+
+# num = input("Enter an integer: ")
+# num = int(num)
+# print(factorial(num))
+
+
+arr1 = []
+for i in range(1, 100000 + 1):
+    arr1.append(i)
+print(arr1)
 
 
 

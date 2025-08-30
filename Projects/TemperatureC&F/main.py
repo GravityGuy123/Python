@@ -10,6 +10,7 @@ while True:
     if not user_temp:
         print("Entry cannot be empty.")
         continue
+    # if user_temp != "C" and user_temp != "F"
     if user_temp not in ("C", "F"):
         print("You must choose C for Celsius or F for Fahrenheit.")
         continue
