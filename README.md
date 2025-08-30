@@ -80,9 +80,25 @@ The `Projects` folder houses complete Python applications and projects, each in 
 
 This is a personal learning repository, but if you have suggestions for improvements or find any issues, feel free to reach out!
 
-## Contact
+## Author
 
-If you have any questions about the code or projects, please don't hesitate to get in touch.
+**Simon Ejidike**
+- GitHub: [@GravityGuy123](https://github.com/GravityGuy123/)
+- Email: simmyifeanyi@gmail.com
+- LinkedIn: [Ifeanyi Ejidike](https://www.linkedin.com/in/ifeanyi-ejidike-310029357)
+- Facebook: [Simmy Jid](https://web.facebook.com/billy.rex.7334)
+- WhatsApp: [Gravity](https://wa.link/k9dm3u)
+- Twitter: [Gravity](https://x.com/Galaxies_Grafx)
+
+## License
+
+*This work is released into the public domain.*
+*You are free to use, modify, distribute, and share it without restriction.*
+
+## Acknowledgments
+
+- Thanks to the Python community for excellent documentation and resources
+- Inspiration from various online tutorials and coding challenges
 
 ---
 
