@@ -1,3 +1,5 @@
+# DataStructureAlgorithm
+
 # age = 4
 # fruits = ["apple", "banana", "cherry"]
 # print(fruits)
@@ -17,15 +19,8 @@
 # print(fruits)
 
 
-
-
-
-
-
-
 # empty_list = [] # Infered List
 # print(type(empty_list)) # Explicit List
-
 
 
 # empty_dict = {} # Infered dictionary
@@ -74,7 +69,6 @@
 # .insert() # Adds one item to the end of a list, tuple etc.
 # .extend() # Adds two or more lists, dictionary etc together.
 # .count() # counts the number of entry for a particular value.
-
 
 
 # fruits = ["apple", "orange", "papaya", "mango", "apple", "orange", "papaya", "mango"]
@@ -147,9 +141,6 @@ for q in range(5):
     li.append(q**3)
 
 print(f"List 3: {li}")
-
-
-
 
 
 # Learn data structure called Hash Map

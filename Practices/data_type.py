@@ -67,7 +67,6 @@
 #         print(f"Am {height} meters tall")
 
 
-
 # height = input("What is your height? ").strip()
 # if not height:
 #     print("Entry cannot be empty")
@@ -81,39 +80,54 @@
 #         print(f"An error occurred: {e}")
 
 
+# # Loop until valid input is given
+# while True:
+#     height = input("What is your height? ").strip()
 
+#     if not height:
+#         print("Entry cannot be empty")
+#         continue
 
-# Loop until valid input is given
-while True:
-    height = input("What is your height? ").strip()
-
-    if not height:
-        print("Entry cannot be empty")
-        continue
-
-    try:
-        height = float(height)
-        print(f"Am {height} meters tall")
-        break  # ✅ exit loop once valid input is given
-    except ValueError:
-        print("Entry must be a valid number")
-
-
-# # Cleaner version
-# height = input("What is your height? ").strip()
-
-# if not height:
-#     print("Entry cannot be empty")
-# else:
 #     try:
-#         # Try converting to float (works for both int and decimal inputs)
 #         height = float(height)
-#         print(f"I am {height} meters tall")
+#         print(f"Am {height} meters tall")
+#         break  # ✅ exit loop once valid input is given
 #     except ValueError:
 #         print("Entry must be a valid number")
 
 
-# Difference between .strip(), .split(), .join() and .replace() is that: 
+# while True:
+#     height = input("How tall are you? ").strip()
+
+#     if not height:
+#         print("Entry cannot be empty")
+#         continue
+
+#     try:
+#         height = float(height)
+#         print(f"Am {height} feets tall")
+#         break
+#     except ValueError:
+#         print("Entry must be a value number")
+#         continue
+
+
+# # Cleaner version
+# while True:
+#     height = input("What is your height? ").strip()
+
+#     if not height:
+#         print("Entry cannot be empty")
+#     else:
+#         try:
+#             # Try converting to float (works for both int and decimal inputs)
+#             height = float(height)
+#             print(f"I am {height} meters tall")
+#         except ValueError:
+#             print("Entry must be a valid number")
+
+
+# Difference between .strip(), .split(), .join() and .replace() is that:
 # .strip() removes whitespace from the beginning and end of a string
 # .split() splits a string into a list of substrings based on a specified delimiter
 # .join() joins a list of strings into a single string with a specified delimiter
