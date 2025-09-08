@@ -205,14 +205,68 @@
 
 
 # # Lists
-bicycles = ["trek", "cannondale", "redline", "specialized"]
+# bicycles = ["trek", "cannondale", "redline", "specialized"]
 # print(bicycles)
 
 # # Accessing Elements in a List
 # print(f"First: {bicycles[0]}\n 2nd: {bicycles[1]}\n 3rd: {bicycles[2]}")
 
-colors = ['black', 'red', 'blue', 'orange', 'white', 'pink', 'purple']
-red = colors[1]
-print(f"The color is {red}")
+# colors = ['black', 'red', 'blue', 'white', 'purple']
+# print(f"Normal: {colors}")
+# red = colors[1]
+# print(f"The color is {red}")
 
-print(f"My bicycle was a {bicycles[0].upper()}")
+# print(f"My bicycle was a {bicycles[0].upper()}")
+
+
+# # Changing, Adding, and Removing Elements
+# colors = ['gray', 'red', 'blue', 'white', 'purple']
+# colors[3] = 'black'
+# print(f"After Change: {colors}")
+
+# # Adding Elements with append()
+# colors.append("orange")
+# colors.append("magenta")
+# print(f"After Add: {colors}")
+
+
+# ['honda', 'yamaha', 'suzuki', 'ducati']
+# bikes = []
+# print(f"Before Append: {bikes}")
+# bikes.append("honda")
+# bikes.append("yamaha")
+# bikes.append("suzuki")
+# bikes.append("ducati")
+# print(f"\nAfter Append: {bikes}")
+
+# # Adding Elements with insert()
+# # Used when u want to add an element at a particular index
+
+# bikes = ['honda', 'yamaha', 'suzuki', 'ducati']
+# print(f"Before Insert: {bikes}")
+# bikes.insert(2, "mate")
+# bikes.insert(4, "kymko")
+# print(f"After Insert: {bikes}")
+
+
+# # Removing Elements with their index
+# del bikes[5]
+# print(f"After Delete: {bikes}")
+
+# # Removing Last Elements
+# colors = ["gray", "red", "blue", "white", "purple"]
+# print(f"Before Pop: {colors}")
+# colors.pop()
+# print(f"\nAfter Remove: {colors}")
+
+
+# # Removing Elements by value
+# colors = ["gray", "red", "blue", "orange", "white", "black", "purple"]
+# print(f"Before Remove: {colors}")
+# colors.remove("orange")
+# colors.remove("gray")
+
+# black_color = 'black'
+# print(f"\nAfter Remove: {colors}")
+# colors.remove(black_color)
+# print(f"\nAfter Remove2: {colors}")
