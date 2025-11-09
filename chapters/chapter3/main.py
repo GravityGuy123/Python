@@ -121,3 +121,131 @@ print(f"{dinner_list[1]}, you re still invited to dinner.")
 del dinner_list[0]
 del dinner_list[0]
 print(f'\nDinner List: {dinner_list}')
+
+
+# Try It Yourself
+# 3-8. Seeing the World: Think of at least five places in the world you’d like to visit.
+# a. Store the locations in a list. Make sure the list is not in alphabetical order.
+# b Print your list in its original order. Don’t worry about printing the list neatly, just print it as a raw Python list.
+# c. Use sorted() to print your list in alphabetical order without modifying the actual list.
+# d. Show that your list is still in its original order by printing it.
+# e. Use sorted() to print your list in reverse alphabetical order without changing the order of the original list.
+# f. Show that your list is still in its original order by printing it again.
+# g. Use reverse() to change the order of your list. Print the list to show that its order has changed.
+# h. Use reverse() to change the order of your list again. Print the list to show it’s back to its original order.
+# i. Use sort() to change your list so it’s stored in alphabetical order. Print the list to show that its order has been changed.
+# j. Use sort() to change your list so it’s stored in reverse alphabetical order. Print the list to show that its order has changed.
+# 3-9. Dinner Guests: Working with one of the programs from Exercises 3-4 through 3-7 (page 42), use len() to print a message indicating the number of people you are inviting to dinner.
+# 3-10. Every Function: Think of something you could store in a list. For example, you could make a list of mountains, rivers, countries, cities, languages, or anything else you’d like. Write a program that creates a list containing these items and then uses each function introduced in this chapter at least once.
+
+# 3.8 Seeing the World
+# 3.8a
+travel_countries = ["France", "America", "China", "Dubai", "Australia", "Tokyo"]
+
+# 3.8b
+print(f"\nOriginal List: {travel_countries}")
+
+# 3.8c
+print(f"\nTemp Sorted List: {sorted(travel_countries)}")
+
+# 3.8d
+print(f"\nOriginal List: {travel_countries}")
+
+# 3.8e
+print(f"\nTemp Reverse Sorted List: {sorted(travel_countries, reverse=True)}")
+
+# 3.8f
+print(f"\nOriginal List: {travel_countries}")
+
+# 3.8g
+travel_countries.reverse()
+print(f"\nReverse Changed List 1: {travel_countries}")
+
+# 3.8h
+travel_countries.reverse()
+print(f"\nReverse Changed List 2: {travel_countries}")
+
+# 3.8i
+travel_countries.sort()
+print(f"\nSort Changed List 1: {travel_countries}")
+
+# 3.8j
+travel_countries.sort(reverse=True)
+print(f"\nReverse Sort Changed List 1: {travel_countries}")
+
+# 3.9 Dinner Guests:
+print(f"Number of dinner guests is {len(dinner_list)}")
+
+# 3.10 Every Function
+languages = ["Spanish", "French", "Chinese", "Portuguese", "Madrian", "Hindi"]
+
+print("Original list of languages:")
+print(languages)
+
+# Append a new language
+languages.append("Arabic")
+print("\nAfter append:")
+print(languages)
+
+# Insert a language at a specific position
+languages.insert(2, "German")
+print("\nAfter insert at index 2:")
+print(languages)
+
+# Remove a language using del
+del languages[3]
+print("\nAfter deleting the element at index 3:")
+print(languages)
+
+# Remove a language using pop
+popped_language = languages.pop()
+print("\nAfter pop (removed last element):")
+print(languages)
+print("Popped language:", popped_language)
+
+# Remove a language by value
+languages.remove("German")
+print("\nAfter removing 'German' by value:")
+print(languages)
+
+# Temporary alphabetical sorting
+print("\nSorted (temporary alphabetical):")
+print(sorted(languages))
+
+# Show list is unchanged
+print("List after sorted():")
+print(languages)
+
+# Temporary reverse alphabetical sorting
+print("\nSorted (temporary reverse alphabetical):")
+print(sorted(languages, reverse=True))
+
+# Reverse the list in place
+languages.reverse()
+print("\nAfter reverse() (in place):")
+print(languages)
+
+# Reverse again to restore original
+languages.reverse()
+print("\nAfter reverse() again (restored):")
+print(languages)
+
+# Sort the list permanently in alphabetical order
+languages.sort()
+print("\nAfter sort() in alphabetical order:")
+print(languages)
+
+# Sort the list permanently in reverse alphabetical order
+languages.sort(reverse=True)
+print("\nAfter sort(reverse=True) in reverse alphabetical order:")
+print(languages)
+
+# Use len() to show number of items
+print("\nNumber of languages in the list:", len(languages))
+
+
+# 3-11. Intentional Error: If you haven’t received an index error in one of your programs yet, try to make one happen. Change an index in one of your programs to produce an index error. Make sure you correct the error before closing the program.
+
+cities = ["Nnewi", "Ihiala", "Enugwu-ukwu", "Nnobi"]
+# print(f"Test Error: {cities[4]}")
+print(f"Test Error: {cities[-1]}")

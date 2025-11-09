@@ -270,3 +270,76 @@
 # print(f"\nAfter Remove: {colors}")
 # colors.remove(black_color)
 # print(f"\nAfter Remove2: {colors}")
+
+
+# # Organizing a List
+# # Sorting a List Permanently with the sort() Method
+# colors = ['red', 'yellow', 'blue', 'orange', 'black', 'white', 'magenta']
+# print(f"Before Sort: {colors}")
+
+# colors.sort()
+# print(f"After Sort: {colors}") # List sorted permanently. Original position cannot be retrieved
+
+# # Sorting in reverse
+# mobile_phones = ['tecno', 'nokia', 'snmsung', 'redme', 'motorolla', 'infinix']
+# mobile_phones.sort(reverse=True)
+# print(f"Reverse Sorted: {mobile_phones}") # Sorts and reverses the list
+# # NB: The order is also permanently reversed
+
+
+# # Sorting in Reverse with .reverse()
+# cars = ['bmw', 'audi', 'toyota', 'subaru', 'mecedes', 'camry']
+# cars.reverse()
+# print(f"Rversed List: {cars}")
+
+
+# # Sorting a List Temporarily with the sorted() Function
+# cars = ['bmw', 'audi', 'toyota', 'subaru', 'mecedes', 'camry']
+# print(f"Original List: {cars}")
+
+# sorted_cars = sorted(cars)
+# reverse_sorted_cars = sorted(cars, reverse=True)
+# print(f"After Sort: {sorted_cars}")
+# print(f"After Reverse Sort: Sort: {reverse_sorted_cars}")
+# print(f"Reverse Sort: {sorted(cars, reverse=True)}")
+
+# print(f"Original List: {cars}") # Original list remains unchanged
+
+
+# colors = ['red', 'yellow', 'blue', 'orange', 'black', 'white', 'magenta']
+# print(f"Original List: {colors}")
+# print(f"\nSorted List: {sorted(colors)}")
+# print(f"\nReverse Sorted List: {sorted(colors, reverse=True)}")
+
+
+# # Reversing a list's order with .reverse()
+# colors = ['red', 'yellow', 'blue', 'orange', 'black', 'white', 'magenta']
+# colors.reverse()
+# print(f"Reeverse order List: {colors}") # Only reverses the order of the list and not alphabetically
+
+
+# # Finding the Length of a List
+# colors = ["red", "yellow", "blue", "orange", "black", "white", "magenta"]
+# print(f"Length of Colors: {len(colors)}")
+
+# motorcycles = ["honda", "yamaha", "suzuki"]
+# print(f"Normal: {motorcycles}")
+
+# motorcycles.append ('ducati')
+# print(f"Normal2: {motorcycles}")
+
+# motorcycles.insert(0, "mate",)
+# print(f"Normal3: {[m.upper() for m in motorcycles]}")
+# Python lists don't have a .upper() method only stringss do and that's why i had to loop through the list making each item to be in uppercase
+
+# cars = ["bmw", "audi", "toyota", "subaru"]
+# print(f"Normal: {cars}")
+
+# print(f"After Temp Sort: {sorted(cars)}")
+# print(f"After Reverse Temp Sort: {sorted(cars, reverse=True)}")
+# print(f"Normal: {cars}")
+
+
+# # Avoiding Index Errors When Working with Lists
+# motorcycles = ['honda', 'yamaha', 'suzuki']
+# print(motorcycles[3])

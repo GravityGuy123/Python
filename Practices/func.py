@@ -112,10 +112,10 @@
 
 # greet()
 
-# def greet_person(name):
-#     print("Hello, " + name + "!")
-#     print("Nice to meet you!")
-#     print("Have a great day!")
+def greet_person(name):
+    print("\nHello, " + name.title() + "!")
+    print("Nice to meet you!")
+    print("Have a great day!")
 
 # greet_person("Mike")
 # greet_person("Kings")
@@ -124,9 +124,9 @@
 # greet_person("Charlie")
 
 
-# def introduce(name, age):
-#     print("Hi, am " + name + " and am " + str(age) + " years old")
-#     print(f"Hi, am {name} and am {age} years old")
+def introduce(name, age):
+    # print("\nHi, am " + name + " and am " + str(age) + " years old")
+    print(f"\nHi, am {name.title()} and am {age} years old")
 # introduce("gravity", 15)
 
 # # Using Exceptions
@@ -207,7 +207,7 @@ def divide():
     except ZeroDivisionError as z:
         print(f"Cannot divide by zero: -> {z}.")
 
-print("Done")
+# print("Done")
     
 
 
