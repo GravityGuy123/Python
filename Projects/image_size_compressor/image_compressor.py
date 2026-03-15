@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import argparse
-import json
 import os
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Optional
@@ -27,6 +27,23 @@ class CompressOptions:
     progressive: bool
     background_rgb: tuple[int, int, int]
     webp_lossless: bool
+    unicode_output: bool
+
+
+def safe_print(text: str) -> None:
+    """
+    Print without crashing on Windows terminals that default to cp1252.
+    - Tries normal print first.
+    - If UnicodeEncodeError happens, prints an ASCII-safe version.
+    """
+    try:
+        print(text)
+        return
+    except UnicodeEncodeError:
+        # Fallback: replace non-encodable chars with '?'
+        encoded = text.encode(sys.stdout.encoding or "utf-8", errors="replace")
+        sys.stdout.buffer.write(encoded + os.linesep.encode(sys.stdout.encoding or "utf-8", errors="replace"))
+        sys.stdout.flush()
 
 
 def normalize_format(fmt: str) -> str:
@@ -193,8 +210,6 @@ def compress_one(input_path: Path, opts: CompressOptions) -> Path:
             q = int(opts.quality)
             best_path = out_path
 
-            # We'll write to final path; if overwrite is False and collision happened,
-            # ensure_out_path already made it unique.
             while True:
                 save_image(
                     img_to_save,
@@ -240,10 +255,19 @@ def compress_many(inputs: Iterable[Path], opts: CompressOptions) -> int:
             out = compress_one(p, opts)
             after = out.stat().st_size
             saved = 0.0 if before == 0 else (1.0 - (after / before)) * 100.0
-            print(f"✅ {p.name} → {out.name} | -{saved:.1f}%")
+
+            if opts.unicode_output:
+                msg = f"✅ {p.name} → {out.name} | -{saved:.1f}%"
+            else:
+                msg = f"[OK] {p.name} -> {out.name} | -{saved:.1f}%"
+
+            safe_print(msg)
             ok += 1
         except Exception as e:
-            print(f"❌ {p}: {e}")
+            if opts.unicode_output:
+                safe_print(f"❌ {p}: {e}")
+            else:
+                safe_print(f"[ERR] {p}: {e}")
     return ok
 
 
@@ -260,7 +284,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--no-exif", action="store_true", help="Do not preserve EXIF.")
     parser.add_argument("--max-width", type=int, default=1920, help="Max width (default 1920).")
     parser.add_argument("--max-height", type=int, default=1080, help="Max height (default 1080).")
-
     parser.add_argument(
         "--format",
         default=None,
@@ -283,7 +306,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Background RGB for flattening alpha when saving JPEG (default 255,255,255).",
     )
     parser.add_argument("--webp-lossless", action="store_true", help="Use WEBP lossless compression.")
-
+    parser.add_argument(
+        "--unicode",
+        action="store_true",
+        help="Use unicode symbols in output (✅ ❌ →). Only enable if your terminal supports UTF-8.",
+    )
     return parser
 
 
@@ -322,37 +349,37 @@ def main() -> None:
         progressive=not bool(args.no_progressive),
         background_rgb=tuple(args.background),
         webp_lossless=bool(args.webp_lossless),
+        unicode_output=bool(args.unicode),
     )
 
     inputs = [Path(p) for p in args.inputs]
     ok = compress_many(inputs, opts)
-    print(f"\nDone. Compressed {ok}/{len(inputs)} file(s).")
+    safe_print(f"\nDone. Compressed {ok}/{len(inputs)} file(s).")
 
 
 if __name__ == "__main__":
     main()
 
 
-
-
 # # How to use (compressor)
 # # 1. Best Command
 # python image_compressor.py image.jpg --format WEBP --quality 82
-
-# # 2. Compress all in jfif format and convert to webp 
+# python image_compressor.py og.png --format JPG --quality 82
+#
+# # 2. Compress all in jfif format and convert to webp
 # python image_compressor.py *.jfif --format WEBP --quality 82
-
-# # 2. Simple compress, keep format when possible
+#
+# # 3. Simple compress, keep format when possible
 # python image_compressor.py photo.png
-
-# # 3. Force JPEG output (best for photos)
+#
+# # 4. Force JPEG output (best for photos)
 # python image_compressor.py big.png --format JPEG --quality 82
-
-# # 4. Target file size (auto reduces quality)
+#
+# # 5. Target file size (auto reduces quality)
 # python image_compressor.py photo.jpg --format JPEG --target-kb 250 --quality 90 --min-quality 40
-
-# # 5. Resize + compress
+#
+# # 6. Resize + compress
 # python image_compressor.py photo.jpg --max-width 1600 --max-height 900 --quality 80
-
-# # 1. Batch
+#
+# # 7. Batch
 # python image_compressor.py ./images/a.jpg ./images/b.png --out-dir ./out --format WEBP --quality 82

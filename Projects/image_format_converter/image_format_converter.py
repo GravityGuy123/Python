@@ -367,6 +367,8 @@ if __name__ == "__main__":
 # # How to use (converter)
 # python image_format_converter.py list-formats --verbose
 # python image_format_converter.py convert photo.png --to WEBP
+# python image_format_converter.py convert *.png --to WEBP
+# python image_format_converter.py convert *.jpg --to PNG
 # python image_format_converter.py convert favicon.png --to ICO
 # python image_format_converter.py convert a.png b.jpg c.webp --to PNG --out-dir ./out
 # python image_format_converter.py convert transparent.png --to JPEG --background 255,255,255
